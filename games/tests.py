@@ -58,7 +58,7 @@ class GameTest(APITestCase):
         self.client.logout() 
         url = reverse("games_list")  
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     def test_only_owner_can_delete_game(self):
         self.client.logout()

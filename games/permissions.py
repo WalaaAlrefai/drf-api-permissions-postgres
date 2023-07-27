@@ -2,7 +2,7 @@ from rest_framework import permissions
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
 
-    message = "you can tedit this Thing object , you are not the owner !!"
+    message = "you can't edit this Thing object , you are not the owner !!"
     def has_object_permission(self, request, view, obj):
 
         if request.method == 'GET':

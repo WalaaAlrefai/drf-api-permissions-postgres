@@ -11,7 +11,7 @@ from .permissions import IsOwnerOrReadOnly
 class GameListView(ListCreateAPIView):
     queryset = Game.objects.all()
     serializer_class = GameSerializer
-    permission_classes = [AllowAny]
+    # permission_classes = [IsOwnerOrReadOnly]
 
 class GameDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Game.objects.all()
